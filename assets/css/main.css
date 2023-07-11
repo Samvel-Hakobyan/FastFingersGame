@@ -1,0 +1,965 @@
+/*! HTML5 Boilerplate v8.0.0 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 2.1.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+
+html {
+  color: #222;
+  font-size: 1em;
+  line-height: 1.4;
+}
+
+/*
+ * Remove text-shadow in selection highlight:
+ * https://twitter.com/miketaylr/status/12228805301
+ *
+ * Vendor-prefixed and regular ::selection selectors cannot be combined:
+ * https://stackoverflow.com/a/16982510/7133471
+ *
+ * Customize the background color to match your design.
+ */
+
+::-moz-selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+::selection {
+  background: #b3d4fc;
+  text-shadow: none;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+/*
+ * Remove the gap between audio, canvas, iframes,
+ * images, videos and the bottom of their containers:
+ * https://github.com/h5bp/html5-boilerplate/issues/440
+ */
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/*
+ * Remove default fieldset styles.
+ */
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+ * Allow only vertical resizing of textareas.
+ */
+
+textarea {
+  resize: vertical;
+}
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Helper classes
+   ========================================================================== */
+
+/*
+ * Hide visually and from screen readers
+ */
+
+.hidden,
+[hidden] {
+  display: none !important;
+}
+
+/*
+ * Hide only visually, but have it available for screen readers:
+ * https://snook.ca/archives/html_and_css/hiding-content-for-accessibility
+ *
+ * 1. For long content, line feeds are not interpreted as spaces and small width
+ *    causes content to wrap 1 word per line:
+ *    https://medium.com/@jessebeach/beware-smushed-off-screen-accessible-text-5952a4c2cbfe
+ */
+
+.sr-only {
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  /* 1 */
+}
+
+/*
+ * Extends the .sr-only class to allow the element
+ * to be focusable when navigated to via the keyboard:
+ * https://www.drupal.org/node/897638
+ */
+
+.sr-only.focusable:active,
+.sr-only.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  white-space: inherit;
+  width: auto;
+}
+
+/*
+ * Hide visually and from screen readers, but maintain layout
+ */
+
+.invisible {
+  visibility: hidden;
+}
+
+/*
+ * Clearfix: contain floats
+ *
+ * For modern browsers
+ * 1. The space content is one way to avoid an Opera bug when the
+ *    `contenteditable` attribute is included anywhere else in the document.
+ *    Otherwise it causes space to appear at the top and bottom of elements
+ *    that receive the `clearfix` class.
+ * 2. The use of `table` rather than `block` is only necessary if using
+ *    `:before` to contain the top-margins of child elements.
+ */
+.clearfix::before,
+.clearfix::after {
+  content: " ";
+  display: table;
+}
+
+.clearfix::after {
+  clear: both;
+}
+
+/* ==========================================================================
+   EXAMPLE Media Queries for Responsive Design.
+   These examples override the primary ('mobile first') styles.
+   Modify as content requires.
+   ========================================================================== */
+
+@media only screen and (min-width: 35em) {
+  /* Style adjustments for viewports that meet the condition */
+}
+
+@media print,
+(-webkit-min-device-pixel-ratio: 1.25),
+(min-resolution: 1.25dppx),
+(min-resolution: 120dpi) {
+  /* Style adjustments for high resolution devices */
+}
+
+/* ==========================================================================
+   Print styles.
+   Inlined to avoid the additional HTTP request:
+   https://www.phpied.com/delay-loading-your-print-css/
+   ========================================================================== */
+
+@media print {
+  *,
+  *::before,
+  *::after {
+    background: #fff !important;
+    color: #000 !important;
+    /* Black prints faster */
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
+
+  a[href]::after {
+    content: " (" attr(href) ")";
+  }
+
+  abbr[title]::after {
+    content: " (" attr(title) ")";
+  }
+
+  /*
+   * Don't show links that are fragment identifiers,
+   * or use the `javascript:` pseudo protocol
+   */
+  a[href^="#"]::after,
+  a[href^="javascript:"]::after {
+    content: "";
+  }
+
+  pre {
+    white-space: pre-wrap !important;
+  }
+
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /*
+   * Printing Tables:
+   * https://web.archive.org/web/20180815150934/http://css-discuss.incutio.com/wiki/Printing_Tables
+   */
+  thead {
+    display: table-header-group;
+  }
+
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
+
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
+}
+
+body {
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+.container{
+  width: 1366px;
+  margin: 0 auto;
+}
+
+h1{
+  font-family: 'Delicious Handrawn', serif;
+  color: #ffb522;
+  text-align: center;
+  font-size: 70px;
+}
+
+h1>span{
+  font-size: 100px;
+  color: #833cfe
+}
+
+
+.text{
+  margin: 150px 0 0 0;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(-100px);
+  }
+  50% {
+    transform: translatey(100px);
+  }
+  100% {
+    transform: translatey(-100px);
+  }
+}
+
+.animatsiya_skrina {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.mesto_img {
+  width: 148px;
+  height: 148px;
+  box-sizing: border-box;
+  transform: translatey(0px);
+  animation: float 6s ease-in-out infinite;
+}
+
+.plavnaya_zastavka {
+  width: 100%;
+  max-width: 780px;
+  padding: 15px 35px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+
+.center {
+  width: 180px;
+  height: 60px;
+  position: absolute;
+  margin: -50px 0;
+}
+.btn {
+  width: 180px;
+  height: 60px;
+  cursor: pointer;
+  background: transparent;
+  border: 1px solid #91C9FF;
+  outline: none;
+  transition: 1s ease-in-out;
+  border-radius: 100px;
+
+}
+
+svg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  fill: none;
+  stroke: #fff;
+  stroke-dasharray: 150 480;
+  stroke-dashoffset: 150;
+  transition: 1s ease-in-out;
+}
+/**/
+.btn:hover {
+  transition: 1s ease-in-out;
+  background: #4F95DA;
+}
+/**/
+.btn:hover svg {
+  stroke-dashoffset: -480;
+}
+
+.btn span {
+  color: white;
+  font-size: 18px;
+  font-weight: 100;
+}
+
+
+.btn-container {
+  margin: 50px 0 0 0;
+  display: flex;
+  justify-content: center;
+  --color-text: #ffffff;
+  --color-background: #ff135a;
+  --color-outline: #ff145b80;
+  --color-shadow: #00000080;
+}
+
+.btn-content {
+  display: flex;
+  align-items: center;
+  padding: 5px 30px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 30px;
+  color: var(--color-text);
+  background: var(--color-background);
+  transition: 1s;
+  border-radius: 100px;
+  box-shadow: 0 0 0.2em 0 var(--color-background);
+}
+
+.btn-content:hover, .btn-content:focus {
+  transition: 0.5s;
+  -webkit-animation: btn-content 1s;
+  animation: btn-content 1s;
+  outline: 0.1em solid transparent;
+  outline-offset: 0.2em;
+  box-shadow: 0 0 0.4em 0 var(--color-background);
+}
+
+.btn-content .icon-arrow {
+  transition: 0.5s;
+  margin-right: 0px;
+  transform: scale(0.6);
+}
+
+.btn-content:hover .icon-arrow {
+  transition: 0.5s;
+  margin-right: 25px;
+}
+
+.icon-arrow {
+  width: 20px;
+  margin-left: 15px;
+  position: relative;
+  margin-top: -26px;
+  top: 6%;
+}
+
+/* SVG */
+#arrow-icon-one {
+  transition: 0.4s;
+  transform: translateX(-60%);
+}
+
+#arrow-icon-two {
+  transition: 0.5s;
+  transform: translateX(-30%);
+}
+
+.btn-content:hover #arrow-icon-three {
+  animation: color_anim 1s infinite 0.2s;
+}
+
+.btn-content:hover #arrow-icon-one {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.6s;
+}
+
+.btn-content:hover #arrow-icon-two {
+  transform: translateX(0%);
+  animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+@keyframes color_anim {
+  0% {
+    fill: white;
+  }
+
+  50% {
+    fill: var(--color-background);
+  }
+
+  100% {
+    fill: white;
+  }
+}
+
+/* Button animations */
+@-webkit-keyframes btn-content {
+  0% {
+    outline: 0.2em solid var(--color-background);
+    outline-offset: 0;
+  }
+}
+
+@keyframes btn-content {
+  0% {
+    outline: 0.2em solid var(--color-background);
+    outline-offset: 0;
+  }
+}
+.start_Block{
+  width: 450px;
+  height: 100%;
+  margin: 200px 0;
+}
+
+.keyboard >ul {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  list-style-type: none;
+}
+
+li {
+  height: 3em;
+  width: 3em;
+  color: rgba(0, 0, 0, 0.7);
+  border-radius: 0.4em;
+  line-height: 3em;
+  letter-spacing: 1px;
+  margin: 0.4em;
+  transition: 0.3s;
+  text-align: center;
+  font-size: 1em;
+}
+
+
+.red{
+  background-color: crimson;
+  border: 2px solid crimson;
+}
+
+
+.orange{
+  background-color: darkorange;
+  border: 2px solid darkorange;
+}
+
+.darkGreen{
+  background-color: #5ec16b;
+  border: 2px solid #5ec16b;
+}
+
+.blue{
+  background-color: #0daafd;
+  border: 2px solid #0daafd;
+}
+
+.darkBlue{
+  background-color: #4575bd;
+  border: 2px solid #4575bd;
+}
+
+.lowBlue{
+  background-color: #95d3f8;
+  border: 2px solid #95d3f8;
+}
+
+.yellow{
+  background-color: #ffee95;
+  border: 2px solid #ffee95;
+}
+
+.lowGreen{
+  background-color: #b9e5b9;
+  border: 2px solid #b9e5b9;
+}
+
+.mains{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-content{
+  cursor: pointer;
+}
+
+.outer:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+}
+
+.inner {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.outer {
+  text-align: center;
+}
+
+.outer{
+  color: #ffb522;
+  font-size: 150px;
+  font-family: 'Delicious Handrawn', serif;
+}
+
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+    transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+    transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+    transform: translate(0);
+  }
+}
+
+
+.selectedKey {
+  background-color: transparent;
+  -webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+
+
+
+.hit {
+  -webkit-animation: hit 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+  animation: hit 0.3s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+
+@keyframes hit {
+  0% {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+/* .dropbtn {
+  background-color: #3498DB;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropbtn:hover, .dropbtn:focus {
+  background-color: #2980B9;
+} */
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  overflow: auto;
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+
+.show {
+  display: block;
+}
+
+.header{
+  display: flex;
+    flex-direction: row;
+    width: 100%;
+    flex-wrap: nowrap;
+    align-content: flex-end;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.game {
+  z-index: 1;
+  height: 500px;    
+}
+
+.game .game-part {
+  margin-top: 120px;
+  min-height: 50vh;
+  height: 100%;
+  text-align: center;
+  width: 90%;
+  max-width: 800px;  
+}
+
+.game header {
+  margin: 1rem 1rem 10rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+header i {
+  color: #ffb522;
+}
+
+
+.higher-score  {
+  height: 50px;
+  width: 200px;
+  font-size: 25px;
+  font-family: 'Delicious Handrawn', serif;
+  margin-left: 270px;
+}
+.your-score {
+  height: 50px;
+  font-family: 'Delicious Handrawn', serif;
+  width: 200px;
+  font-size: 25px;
+}
+.input-box {
+  margin-bottom: 8rem;
+}
+.input-box input {
+  text-align: start;
+  height: 100px;
+  width: 500px;
+  appearance: none;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background: #fff;
+  font-size: 25px;
+}
+
+.input-box input.disabled {
+  background: #ccc;
+}
+
+.input-box input:focus {
+  outline: none;
+}
+
+
+.time-bar-div {
+  height: 4px;
+  background: #fff;
+  border-radius: 3px;
+  width: 200px;
+  margin: auto;
+  overflow: hidden;
+}
+
+.time-bar-div span {
+  display: block;
+  height: 100%;
+  width: 100%;
+  background: #ffb522;
+
+}
+
+.time-div  {
+  text-align: center;
+}
+
+.time-div p {
+  margin-top: 2rem;
+  font-size: 1.7rem;
+  font-weight: 600;
+
+}
+
+
+
+.word-div p {
+  position: relative;
+  margin: 2 1.5px;
+  font-size: 50px;
+  color:#001487;
+
+}
+
+.words{
+  display: flex;
+  justify-content: center;
+}
+
+#game-over{
+  text-align: center;
+}
+#game-board {
+  display: flex;
+  flex-wrap: wrap;
+  width: 600px;
+}
+
+.card {
+  width: 75px;
+  height: 75px;
+  perspective: 600px;
+  margin: 12px;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.card-inner {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front,
+.card-back {
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  position: absolute;
+}
+
+.card-back {
+
+  font-size: 40px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-front {
+  font-size: 50px;
+  text-align: center;
+  transform: rotateY(180deg);
+}
+.card-back>img{
+    width: 100%;
+}
+
+.memory{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.win{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin-top: 150px;
+}
+
+.card-front{
+  border: 2px solid white;
+  border-radius: 17px;
+  color: #e0746a;
+}
+
+.inline{
+  display: flex;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+
+#finger_1{
+  margin: 85px 333px 0 -333px;
+  background-color: crimson;
+  width:50px; height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_2{
+  margin: 30px 260px 0 -260px;
+  background-color: darkorange;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_3{
+  margin: 20px 200px 0 -205px;
+  background-color: #5ec16b;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_4{
+  margin: 50px 160px 0 -160px;
+  background-color: #0daafd;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_5{
+  margin: 65px -150px 0 150px;
+  background-color: #4575bd;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_6{
+  margin: 40px -190px 0 190px;
+  background-color: #95d3f8;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_7{
+  margin: 50px -240px 0px 240px;
+  background-color: #ffee95;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+#finger_8{
+  margin: 100px -315px 0 315px;
+  background-color: #b9e5b9;
+  width:50px;
+  height: 50px;
+  border-radius: 50%;
+  display: none;
+  z-index: 1000;
+}
+
+.leftHand>img{
+  width: 350px;
+}
+
+.handShow>img{
+  width: 100px;
+  margin: 0 30px;
+  cursor: pointer;
+}
